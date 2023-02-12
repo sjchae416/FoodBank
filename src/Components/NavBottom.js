@@ -33,7 +33,7 @@ export default function FixedBottomNavigation({ userValue }) {
           }
           {userValue === 1 &&
             <>
-              <BottomNavigationAction label="Home" icon={<ArticleIcon />} onClick={()=>{ navigate("/bank")}} />
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} onClick={()=>{ navigate("/bank")}} />
               <BottomNavigationAction label="History" icon={<ArticleIcon />} onClick={()=>{ navigate("/bankH")}} />
             </>
           }

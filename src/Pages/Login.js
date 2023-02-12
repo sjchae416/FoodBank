@@ -22,6 +22,7 @@ import { Tabs,Tab } from '@mui/material';
 
 
 function Copyright(props) {
+
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
@@ -37,7 +38,7 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn({value, handleChange}) {
+export default function SignIn({setHide, value, handleChange}) {
   // 0: Provider
   // 1: Food Bank
   // const [value, setValue] = React.useState(0);
@@ -46,6 +47,11 @@ export default function SignIn({value, handleChange}) {
   //   setValue(newValue);
   //   console.log(value)
   // };
+
+  React.useEffect(() => {
+    setHide(2)
+  })
+
   const navigationHandler = (flag) =>{
     console.log(flag)
 

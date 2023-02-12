@@ -41,7 +41,10 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Register() {
+export default function Register({ setHide }) {
+  React.useEffect(() => {
+    setHide(2)
+  })
     const [value, setValue] = React.useState('female');
     const handleChange = (event) => {
       setValue(event.target.value);
