@@ -10,7 +10,7 @@ import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import Button from '@mui/material/Button';
 import NavBottom from '../Components/NavBottom'
-
+import { useNavigate } from 'react-router-dom';
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: '#44b700',
@@ -99,8 +99,10 @@ const data = [
 const line1Color = "green";
 
 export default function Profile() {
-    
-  console.log("Graph1 Data: ", data);
+  const navigate=useNavigate();
+  const logout = () =>{
+    navigate("/")
+  }
   return (
       <>
         <Typography variant="h4" margin={1} marginTop={3}> Iron Poke</Typography>
@@ -145,6 +147,9 @@ export default function Profile() {
           sx={{ width: 2/3 }}
           style={{margin:20 }}
         />
+        <Button variant="outlined" color="error" onClick={logout}>
+        LogOut
+      </Button>
         <NavBottom/>
         </>
   );
