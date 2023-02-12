@@ -1,7 +1,7 @@
 import React from 'react'
 import ProgressBar from "../Components/ProgressBar"
 
-const Progress = () => {
+const Progress = (props) => {
   return (
     <div>Progress
         <ProgressBar/>

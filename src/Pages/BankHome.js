@@ -9,15 +9,16 @@ import {Typography} from '@mui/material';
 import { Avatar } from '@mui/material';
 import {Button} from '@mui/material';
 import RequestModal from '../Components/RequestModal';
-
+import NavBottom from "../Components/NavBottom";
 import Container from '@mui/material';
 
 
 
   
-const BankHome = () => {
+const BankHome = (props) => {
    
   return (
+    <>
     <div>
         <Typography sx={{textAlign:"center", fontWeight:"600"}}> Status</Typography>
         <Box sx={{ flexGrow: 1, p:5 }}>
@@ -64,6 +65,8 @@ const BankHome = () => {
       </Box>
 
     </div>
+    <NavBottom userValue={props.value} />
+    </>
   )
 }
 

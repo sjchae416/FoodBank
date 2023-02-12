@@ -30,18 +30,17 @@ function App() {
 			<Routes>
 				<Route path={"/"} element={<Login setHide={setHide} value={value} handleChange={handleChange} />} />
 				<Route path={"/login"} element={<Login setHide={setHide} value={value} handleChange={handleChange} />} />
-				<Route path={"/register"} element={<Register setHide={setHide} />} />
-				<Route path={"/profile"} element={<Profile />} />
-				<Route path={"/home"} element={<Home />} />
-				<Route path={"/progress"} element={<Progress />} />
-				<Route path={"/provH"} element={<ProviderHistory />} />
-				<Route path={"/modal"} element={<HistoryModal />} />
-				<Route path="/bank" element={<BankHome />} />
-				<Route path={"/bankH"} element={<BankHistory />} />
+				<Route path={"/register"} element={<Register setHide={setHide} value={value}/>} />
+				<Route path={"/profile"} element={<Profile value={value}/>} />
+				<Route path={"/home"} element={<Home value={value}/>} />
+				<Route path={"/progress"} element={<Progress value={value}/>} />
+				<Route path={"/provH"} element={<ProviderHistory value={value}/>} />
+				<Route path={"/modal"} element={<HistoryModal value={value}/>} />
+				<Route path="/bank" element={<BankHome value={value}/>} />
+				<Route path={"/bankH"} element={<BankHistory value={value}/>} />
 			</Routes>
 
 			{/* {((value === 0 || value === 1) && hide!==2) && <NavBottom userValue={value} /> */}
-			<NavBottom userValue={value} />
 			
 		</BrowserRouter>
   );

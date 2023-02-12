@@ -98,7 +98,8 @@ const data = [
 
 const line1Color = "green";
 
-export default function Profile() {
+export default function Profile(props) {
+  console.log(props)
   const navigate=useNavigate();
   const logout = () =>{
     navigate("/")
@@ -150,7 +151,7 @@ export default function Profile() {
         <Button variant="outlined" color="error" onClick={logout}>
         LogOut
       </Button>
-        <NavBottom/>
+        <NavBottom userValue={props.value}/>
         </>
   );
 }

@@ -7,10 +7,11 @@ import Stack from '@mui/material/Stack';
 import RequestItem from "../Components/Item";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 import { companyDatas } from "../DummyData/dummyData";
-
-const Home = () => {
+import NavBottom from "../Components/NavBottom";
+const Home = (props) => {
 
     return (
+        <>
             <Grid>
                 <Box sx={{ width: '100%', maxWidth: 500 , marginTop: 4, }}>
                     <Box sx={{display:"flex", alignItems:"center", justifyContent:"space-around", mb:2 }}>
@@ -30,6 +31,8 @@ const Home = () => {
                 {/* <ImageCarousel images={[foodImage]}/> */}
                 <FixedBottomNavigation />
             </Grid>
+            <NavBottom userValue={props.value}/>
+            </>
         );
 };
 

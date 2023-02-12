@@ -110,7 +110,7 @@ export default function SignIn({setHide, value, handleChange}) {
           <Typography component="h1" variant="h5">
             FoodBank
           </Typography>
-
+          [Mobile View Only]
           <Tabs value={value} onChange={handleChange} centered>
             <Tab label="Login as Provider" />
             <Tab label="Login as Food Bank" />
