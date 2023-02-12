@@ -72,7 +72,7 @@ export default function HistoryModal({ user, button }) {
             </Typography>
           </>
           }
-          {button === 'Pending' &&
+          {/* {button === 'Pending' &&
           <>
             <Typography id="modal-modal-title" variant="h6" component="h2">
               Pending...
@@ -81,7 +81,7 @@ export default function HistoryModal({ user, button }) {
               No one has accepted your request yet!
             </Typography>
           </>
-          }
+          } */}
         </Box>
         
         

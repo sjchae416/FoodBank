@@ -8,6 +8,10 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
+import Radio from '@mui/material/Radio';
+import RadioGroup from '@mui/material/RadioGroup';
+import FormControl from '@mui/material/FormControl';
+import FormLabel from '@mui/material/FormLabel';
 
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
@@ -17,7 +21,7 @@ import {Link as Link1} from "react-router-dom"
 // import { signInWithEmailAndPassword } from 'firebase/auth';
 // import {AuthContext} from "../../App"
 import { useNavigate } from "react-router-dom";
-import { Tabs,Tab } from '@mui/material';
+import { WindowSharp } from '@mui/icons-material';
 // import AdbIcon from '@mui/icons-material/Adb';
 
 
@@ -26,7 +30,7 @@ function Copyright(props) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="/">
-        FoodBank
+        Pineapple Brothers
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -37,27 +41,17 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function SignIn({value, handleChange}) {
-  // 0: Provider
-  // 1: Food Bank
-  // const [value, setValue] = React.useState(0);
-
-  // const handleChange = (event, newValue) => {
-  //   setValue(newValue);
-  //   console.log(value)
-  // };
-  const navigationHandler = (flag) =>{
-    console.log(flag)
-
-  }
+export default function Register() {
+    const [value, setValue] = React.useState('female');
+    const handleChange = (event) => {
+      setValue(event.target.value);
+    };
   const registerHandler = () =>{
-    window.location.replace("/register");
+    console.log("hi");
+    
+    window.location.replace("/login")
   }
-
   const navigate = useNavigate();
-//   const {currentUser, setCurrentUser}= React.useContext(AuthContext);
-  
-  // const [currentUser, setCurrentUser]= userState
   const handleSubmit = (event) => {
 //     event.preventDefault();
 //     const data = new FormData(event.currentTarget);
@@ -102,13 +96,8 @@ export default function SignIn({value, handleChange}) {
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           
           <Typography component="h1" variant="h5">
-            FoodBank
+            FoodBank Registeration
           </Typography>
-
-          <Tabs value={value} onChange={handleChange} centered>
-            <Tab label="Login as Provider" />
-            <Tab label="Login as Food Bank" />
-          </Tabs>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
               margin="normal"
@@ -130,44 +119,46 @@ export default function SignIn({value, handleChange}) {
               id="password"
               autoComplete="current-password"
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
+            <TextField
+              margin="normal"
+              required
+              fullWidth
+              name="Comfirm Password"
+              label="Comfirm Password"
+              type="password"
+              id="password"
+              autoComplete="current-password"
             />
-            {value==0 &&<Button
-              type="submit"
+            <TextField
+          id="outlined-read-only-input"
+          label="My Contact Number"
+          defaultValue=""
+          sx={{ width: 2/3 }}
+          style={{margin:0 }}
+        />
+            <FormControl>
+            <FormLabel id="demo-controlled-radio-buttons-group">Type</FormLabel>
+            <RadioGroup
+                aria-labelledby="demo-controlled-radio-buttons-group"
+                name="controlled-radio-buttons-group"
+                value={value}
+                onChange={handleChange}
+            >
+                <FormControlLabel value="foodBank" control={<Radio />} label="Food Bank" />
+                <FormControlLabel value="provider" control={<Radio />} label="Provider" />
+            </RadioGroup>
+            </FormControl>
+            <Button
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-              onClick={()=>{ navigate("/home")}}
+              onClick={registerHandler}
             >
-              Sign In
-            </Button>}
-           {value==1 && <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-              onClick={()=>{ navigate("/bank")}}
-            >
-              Sign In
-            </Button>}
-            
-            <Grid container>
-              <Grid item xs>
-              <Button sx={{fontSize:"0.7rem", textDecoration:"underline"}} >
-                  Forgot password
-                </Button>
-              </Grid>
-              <Grid item>
-              <Button sx={{fontSize:"0.7rem", textDecoration:"underline"}} onClick={registerHandler}>
-                  "Sign Up"
-                </Button>
-              </Grid>
-            </Grid>
+              Register
+            </Button>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
+        
         </Container>
         </Grid>
         </Grid>

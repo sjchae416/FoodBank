@@ -1,3 +1,4 @@
+import * as React from 'react';
 import './App.css';
 import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
 import Login from "./Pages/Login"
@@ -10,23 +11,36 @@ import HistoryModal from './Components/HistoryModal';
 import BankHistory from './Pages/BankHistory';
 import Profile from "./Pages/profilePage"
 import BankHome from './Pages/BankHome';
+import Register from './Pages/registerPage';
+
+
+
 
 function App() {
+	const [value, setValue] = React.useState(0);
+	
+	const handleChange = (event, newValue) => {
+		setValue(newValue);
+		console.log(value)
+	};
+
   return (
     <BrowserRouter>
 			<Routes>
-				<Route path={"/"} element={<Home />}/>
-        <Route path="/progress" element={<Progress />} />
-				<Route path={"/provH"} element={<ProviderHistory />}/>
-				<Route path={"/modal"} element={<HistoryModal />} />
-				<Route path={"/profile"} element={<Profile />} />
-				<Route path="/bank" element={<BankHome />} />
-				<Route path={"/bankH"} element={<BankHistory />} />
+				<Route path={"/login"} element={<Login value={value} handleChange={handleChange} />} />
 				
-				<Route path="*" element={<Login />} />
-        
+        <Route path={"/register"} element={<Register />} />
+				<Route path={"/profile"} element={<Profile />} />
+						<Route path={"/home"} element={<Home />} />
+
+						<Route path={"/progress"} element={<Progress />} />
+						<Route path={"/provH"} element={<ProviderHistory />} />
+						<Route path={"/modal"} element={<HistoryModal />} />
+						<Route path="/bank" element={<BankHome />} />
+
+						<Route path={"/bankH"} element={<BankHistory />} />
 			</Routes>
-			<NavBottom/>
+			<NavBottom userValue={value} />
 		</BrowserRouter>
   );
 }

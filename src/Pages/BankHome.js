@@ -7,15 +7,23 @@ import { Card ,CardContent} from '@mui/material';
 import {Grid} from '@mui/material';
 import {Typography} from '@mui/material';
 import { Avatar } from '@mui/material';
+import {Button} from '@mui/material';
+import RequestModal from '../Components/RequestModal';
 
+import Container from '@mui/material';
+
+
+
+  
 const BankHome = () => {
-    
+   
   return (
     <div>
-        <Typography> Status</Typography>
+        <Typography sx={{textAlign:"center", fontWeight:"600"}}> Status</Typography>
         <Box sx={{ flexGrow: 1, p:5 }}>
            
       <LinearProgress variant="determinate" sx={{height:"30px"}}value={80} />
+      <Typography sx={{textAlign:"center", fontWeight:"600"}}> 100/120</Typography>
       
 
     </Box>
@@ -39,15 +47,21 @@ const BankHome = () => {
                 </Grid>
               </Grid> 
 
-              {/* <Grid item xs={4} sx={{ pl: 1 }}>
-                <Button variant="outlined" sx={{ borderColor: "black", color: "black", width: '100%' }}></Button>
+              <Grid item xs={4} sx={{ pl: 1 }}>
+                <Typography sx={{ borderColor: "black", color: "black", width: '100%' }}>{bank.button}</Typography>
                 
-              </Grid> */}
+                
+              </Grid>
              </Grid>
           </CardContent>
         </Card>
       )) 
      } 
+      <Box sx={{ mb: "auto" }}>
+        <Button >
+          <RequestModal />
+        </Button>
+      </Box>
 
     </div>
   )

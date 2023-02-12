@@ -10,7 +10,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import ArticleIcon from '@mui/icons-material/Article';
 import { useNavigate } from 'react-router-dom';
 
-export default function FixedBottomNavigation() {
+export default function FixedBottomNavigation({ userValue }) {
   const [value, setValue] = React.useState(0);
   const ref = React.useRef(null);
   const navigate=useNavigate();
@@ -25,9 +25,22 @@ export default function FixedBottomNavigation() {
             setValue(newValue);
           }}
         >
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} onClick={()=>{ navigate("/")}} />
-          <BottomNavigationAction label="History" icon={<ArticleIcon />} onClick={()=>{ navigate("/provH")}} />
-          <BottomNavigationAction label="Profile" icon={<AccountCircleIcon />} onClick={()=>{ navigate("/home")}} />
+          {userValue === 0 &&
+            <>
+              <BottomNavigationAction label="Home" icon={<HomeIcon />} onClick={() => { navigate("/home") }} />
+              <BottomNavigationAction label="History" icon={<ArticleIcon />} onClick={()=>{ navigate("/provH")}} />
+            </>
+          }
+          {userValue === 1 &&
+            <>
+              <BottomNavigationAction label="Home" icon={<ArticleIcon />} onClick={()=>{ navigate("/bank")}} />
+              <BottomNavigationAction label="History" icon={<ArticleIcon />} onClick={()=>{ navigate("/bankH")}} />
+            </>
+          }
+
+
+
+          <BottomNavigationAction label="Profile" icon={<AccountCircleIcon />} onClick={()=>{ navigate("/profile")}} />
         </BottomNavigation>
       </Paper>
     </Box>

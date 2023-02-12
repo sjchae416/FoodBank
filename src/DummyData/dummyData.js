@@ -84,12 +84,12 @@ export const banks = [
 ];
 
 export const providers = [
-    {
-        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
-        name: 'Abhishek Gaire',
-        status: 'Pending',
-        button: 'Pending'
-    },
+    // {
+    //     image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
+    //     name: 'Abhishek Gaire',
+    //     status: 'Pending',
+    //     button: 'Pending'
+    // },
     {
         image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
         name: 'Sije Park',
@@ -106,19 +106,19 @@ export const providers = [
 
 export const restaurants=[
     {
-        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
-        name: 'Jasmine Food',
+        image: 'https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjZ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
+        name: '2023 February 12 10:30 AM',
         status: 'Pending',
-        button: 'Summary'
+        button: '30'
+    },{
+        image: 'https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjl8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
+        name: '2023 February 11 12:30 AM',
+        status: 'Pending',
+        button: '40'
     },{
         image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
-        name: 'Iron Ramen',
+        name: '2023 February 10 9:00 AM',
         status: 'Pending',
-        button: 'Summary'
-    },{
-        image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTJ8fHBlb3BsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=1200&q=60',
-        name: 'Poke Bowl',
-        status: 'Pending',
-        button: 'Summary'
+        button: '30'
     },
 ]

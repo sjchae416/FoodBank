@@ -5,6 +5,12 @@ import { styled } from '@mui/material/styles';
 import Badge from '@mui/material/Badge';
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
+import Typography from '@mui/material/Typography';
+import Rating from '@mui/material/Rating';
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
+import NavBottom from '../Components/NavBottom'
+
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
       backgroundColor: '#44b700',
@@ -96,15 +102,11 @@ export default function Profile() {
     
   console.log("Graph1 Data: ", data);
   return (
-      <div className="App">
-            <h1> Coca Cola</h1>
-            <StyledBadge
-            overlap="circular"
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-            variant="dot"
-        >
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
-        </StyledBadge>
+      <>
+        <Typography variant="h4" margin={1} marginTop={3}>Sije Park</Typography>
+        <Rating name="half-rating" defaultValue={2.5} precision={0.5} margin={1}/>
+        <hr/>
+        <Typography variant="h5" margin={1} marginBottom={0}>My Donation </Typography>
         <div className="wrapper">
           <div className="graphContainer">
             <ResponsiveLine
@@ -122,9 +124,29 @@ export default function Profile() {
                 margin={{ top: 50, right: 50, bottom: 50, left: 50 }}
             />
           </div>
-
         </div>
-      </div>
+        <TextField
+          id="outlined-read-only-input"
+          label="My Contact Number"
+          defaultValue="631-290-8514"
+          InputProps={{
+            readOnly: true,
+          }}
+          sx={{ width: 2/3 }}
+          style={{margin:20 }}
+        />
+        <TextField
+          id="outlined-read-only-input"
+          label="My Contact Email"
+          defaultValue="sije.park@stonybrook.edu"
+          InputProps={{
+            readOnly: true,
+          }}
+          sx={{ width: 2/3 }}
+          style={{margin:20 }}
+        />
+        <NavBottom/>
+        </>
   );
 }
 
