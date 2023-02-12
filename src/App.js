@@ -1,24 +1,33 @@
-import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Routes, Route, Outlet } from "react-router-dom";
+import Login from "./Pages/Login"
+import Home from "./Pages/Home"
+import Progress from './Pages/Progress';
+import ProviderHistory from './Pages/ProviderHistory'
+import imageFood from './img/poke_bowl.jpg'
+import NavBottom from "./Components/NavBottom"
+import HistoryModal from './Components/HistoryModal';
+import BankHistory from './Pages/BankHistory';
+import Profile from "./Pages/profilePage"
+import BankHome from './Pages/BankHome';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello world
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+			<Routes>
+				<Route path={"/"} element={<Home />}/>
+        <Route path="/progress" element={<Progress />} />
+				<Route path={"/provH"} element={<ProviderHistory />}/>
+				<Route path={"/modal"} element={<HistoryModal />} />
+				<Route path={"/profile"} element={<Profile />} />
+				<Route path="/bank" element={<BankHome />} />
+				<Route path={"/bankH"} element={<BankHistory />} />
+				
+				<Route path="*" element={<Login />} />
+        
+			</Routes>
+			<NavBottom/>
+		</BrowserRouter>
   );
 }
 
