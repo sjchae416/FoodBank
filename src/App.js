@@ -28,6 +28,7 @@ function App() {
   return (
     <BrowserRouter>
 			<Routes>
+				<Route path={"/"} element={<Login setHide={setHide} value={value} handleChange={handleChange} />} />
 				<Route path={"/login"} element={<Login setHide={setHide} value={value} handleChange={handleChange} />} />
 				<Route path={"/register"} element={<Register setHide={setHide} />} />
 				<Route path={"/profile"} element={<Profile />} />

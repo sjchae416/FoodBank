@@ -42,6 +42,8 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function Register({ setHide }) {
+  const navigate=useNavigate();
+
   React.useEffect(() => {
     setHide(2)
   })
@@ -50,11 +52,9 @@ export default function Register({ setHide }) {
       setValue(event.target.value);
     };
   const registerHandler = () =>{
-    console.log("hi");
-    
-    window.location.replace("/login")
+    navigate("/")
   }
-  const navigate = useNavigate();
+  
   const handleSubmit = (event) => {
 //     event.preventDefault();
 //     const data = new FormData(event.currentTarget);

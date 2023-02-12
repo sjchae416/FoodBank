@@ -57,7 +57,7 @@ export default function SignIn({setHide, value, handleChange}) {
 
   }
   const registerHandler = () =>{
-    window.location.replace("/register");
+    navigate("/register");
   }
 
   const navigate = useNavigate();

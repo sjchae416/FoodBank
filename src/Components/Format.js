@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Snackbar from '@mui/material/Snackbar';
+import { useNavigate } from 'react-router-dom';
 
 const style = {
   position: 'absolute',
@@ -22,6 +23,7 @@ const style = {
 };
 
 export default function Format(props) {
+  const navigate=useNavigate();
   const [open, setOpen] = React.useState(false);
   const [warnningOpen, setWarnningOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -53,7 +55,7 @@ export default function Format(props) {
       handleClickWarnning(true)
       return;
     }
-    window.location.replace("/prov");
+    navigate("/provH");
     setName("");
     setNumber("");
   }

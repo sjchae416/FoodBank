@@ -8,6 +8,7 @@ import SendIcon from '@mui/icons-material/Send';
 import Alert from '@mui/material/Alert';
 import AlertTitle from '@mui/material/AlertTitle';
 import Snackbar from '@mui/material/Snackbar';
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 const style = {
   position: 'absolute',
@@ -72,17 +73,21 @@ export default function BankOrder(props) {
           </Typography>
           <Alert severity="info">
           <AlertTitle>Info</AlertTitle>
-            <strong>Iron Poke is sending food for  </strong>
+            
+            <strong><LocationOnIcon sx={{ height: 10 }} />100 Circle Road </strong>
           </Alert>
+            <Typography>
+            Iron Poke is sending Poke Bowl for 60 people. 
+            </Typography>
 
-          {/* <TextField
-          label="Food Name"
+          <TextField
+          label="Message"
           id="outlined-start-adornment"
           sx={{ m: 1, width: '32ch' }}
           value = {name}
           onChange = {handleName}
         />
-          <TextField
+          {/* <TextField
           label="Number of foods you can donate"
           id="outlined-start-adornment"
           sx={{ m: 1, width: '32ch' }}

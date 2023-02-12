@@ -103,7 +103,7 @@ export default function Profile() {
   console.log("Graph1 Data: ", data);
   return (
       <>
-        <Typography variant="h4" margin={1} marginTop={3}>Sije Park</Typography>
+        <Typography variant="h4" margin={1} marginTop={3}> Iron Poke</Typography>
         <Rating name="half-rating" defaultValue={2.5} precision={0.5} margin={1}/>
         <hr/>
         <Typography variant="h5" margin={1} marginBottom={0}>My Donation </Typography>
